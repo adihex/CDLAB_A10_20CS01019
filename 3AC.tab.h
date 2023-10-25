@@ -1,21 +1,22 @@
-/* A Bison parser, made by GNU Bison 2.7.  */
+/* A Bison parser, made by GNU Bison 3.8.2.  */
 
 /* Bison interface for Yacc-like parsers in C
-   
-      Copyright (C) 1984, 1989-1990, 2000-2012 Free Software Foundation, Inc.
-   
+
+   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2021 Free Software Foundation,
+   Inc.
+
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation, either version 3 of the License, or
    (at your option) any later version.
-   
+
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-   
+
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -26,13 +27,17 @@
    special exception, which will cause the skeleton and the resulting
    Bison output files to be licensed under the GNU General Public
    License without this special exception.
-   
+
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
+/* DO NOT RELY ON FEATURES THAT ARE NOT DOCUMENTED in the manual,
+   especially those whose name start with YY_ or yy_.  They are
+   private implementation details that can be changed or removed.  */
+
 #ifndef YY_YY_3AC_TAB_H_INCLUDED
 # define YY_YY_3AC_TAB_H_INCLUDED
-/* Enabling traces.  */
+/* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
 #endif
@@ -40,75 +45,68 @@
 extern int yydebug;
 #endif
 
-/* Tokens.  */
+/* Token kinds.  */
 #ifndef YYTOKENTYPE
 # define YYTOKENTYPE
-   /* Put the tokens into the symbol table, so that GDB and other debuggers
-      know about them.  */
-   enum yytokentype {
-     AND = 258,
-     ASSIGN = 259,
-     COLON = 260,
-     DIV = 261,
-     ELSE = 262,
-     END = 263,
-     EQ = 264,
-     GE = 265,
-     GLOBAL = 266,
-     GT = 267,
-     IF = 268,
-     LEFT_PAREN = 269,
-     LE = 270,
-     LT = 271,
-     MINUS = 272,
-     MOD = 273,
-     MULT = 274,
-     NE = 275,
-     NOT = 276,
-     OR = 277,
-     PLUS = 278,
-     PRINT = 279,
-     READ = 280,
-     RIGHT_PAREN = 281,
-     SEMICOLON = 282,
-     WHILE = 283,
-     ID = 284,
-     INT_CONST = 285
-   };
+  enum yytokentype
+  {
+    YYEMPTY = -2,
+    YYEOF = 0,                     /* "end of file"  */
+    YYerror = 256,                 /* error  */
+    YYUNDEF = 257,                 /* "invalid token"  */
+    AND = 258,                     /* AND  */
+    ASSIGN = 259,                  /* ASSIGN  */
+    COLON = 260,                   /* COLON  */
+    DIV = 261,                     /* DIV  */
+    ELSE = 262,                    /* ELSE  */
+    END = 263,                     /* END  */
+    EQ = 264,                      /* EQ  */
+    GE = 265,                      /* GE  */
+    GLOBAL = 266,                  /* GLOBAL  */
+    GT = 267,                      /* GT  */
+    IF = 268,                      /* IF  */
+    LEFT_PAREN = 269,              /* LEFT_PAREN  */
+    LE = 270,                      /* LE  */
+    LT = 271,                      /* LT  */
+    MINUS = 272,                   /* MINUS  */
+    MOD = 273,                     /* MOD  */
+    MULT = 274,                    /* MULT  */
+    NE = 275,                      /* NE  */
+    NOT = 276,                     /* NOT  */
+    OR = 277,                      /* OR  */
+    PLUS = 278,                    /* PLUS  */
+    PRINT = 279,                   /* PRINT  */
+    READ = 280,                    /* READ  */
+    RIGHT_PAREN = 281,             /* RIGHT_PAREN  */
+    SEMICOLON = 282,               /* SEMICOLON  */
+    WHILE = 283,                   /* WHILE  */
+    ID = 284,                      /* ID  */
+    INT_CONST = 285                /* INT_CONST  */
+  };
+  typedef enum yytokentype yytoken_kind_t;
 #endif
 
-
+/* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef union YYSTYPE
+union YYSTYPE
 {
-/* Line 2058 of yacc.c  */
-#line 38 ".\\3AC.y"
+#line 38 "3AC.y"
  	
 	char val[100];
 
+#line 98 "3AC.tab.h"
 
-/* Line 2058 of yacc.c  */
-#line 92 "3AC.tab.h"
-} YYSTYPE;
+};
+typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
-# define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
 #endif
 
+
 extern YYSTYPE yylval;
 
-#ifdef YYPARSE_PARAM
-#if defined __STDC__ || defined __cplusplus
-int yyparse (void *YYPARSE_PARAM);
-#else
-int yyparse ();
-#endif
-#else /* ! YYPARSE_PARAM */
-#if defined __STDC__ || defined __cplusplus
+
 int yyparse (void);
-#else
-int yyparse ();
-#endif
-#endif /* ! YYPARSE_PARAM */
+
 
 #endif /* !YY_YY_3AC_TAB_H_INCLUDED  */

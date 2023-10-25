@@ -192,10 +192,10 @@ exp:        exp PLUS exp {
 %%
 
 
-int main()
+int main(int argc, char* argv[])
 {
     extern FILE *yyin;
-    yyin = fopen("input.txt", "r");
+    yyin = fopen(argv[1], "r");
 
     if (yyin == NULL)
     {

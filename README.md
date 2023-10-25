@@ -5,10 +5,9 @@
 
 ### Instructions for usage
 ```
-1. yacc 3AC.y -d  
-2. lex 3AC.l  
-3. gcc 3AC.tab.c  
-4. ./a.out  
+1. make run
+2. ./run <input.txt>
+
 ```
 ### Grammar 
 
