@@ -7,7 +7,7 @@
 %}
 
 %option yylineno 
-
+%option outfile="scanner.c" header-file="scanner.h"
 /* Rule Section */
 %% 
 [/][/].*["\n"]                  {}
@@ -39,8 +39,8 @@ read                            { return READ; }
 ;                               { return SEMICOLON; }
 while                           { return WHILE; }
 [a-zA-Z][a-zA-Z0-9]*            { strcpy(yylval.val, yytext); return ID; }
-[\t\n" "]                       {};
-.                               {printf("Invalid token %s\n", yytext); exit(0);} 
+[\t\n ]                       	{};
+.                               { printf("Invalid token %s\n", yytext); exit(0);} 
 %% 
   
 int yywrap() 

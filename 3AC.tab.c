@@ -72,7 +72,7 @@
     #include <stdio.h> 
     #include <stdlib.h>
     #include <string.h>
-    #include "lex.yy.c"
+    #include "scanner.h"
     int flag=0; 
     
     void yyerror(char *str);
@@ -495,14 +495,14 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  17
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   110
+#define YYLAST   118
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  31
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  20
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  45
+#define YYNRULES  46
 /* YYNSTATES -- Number of states.  */
 #define YYNSTATES  79
 
@@ -557,10 +557,10 @@ static const yytype_int8 yytranslate[] =
 static const yytype_uint8 yyrline[] =
 {
        0,    48,    48,    50,    52,    53,    55,    56,    58,    59,
-      60,    61,    62,    64,    66,    71,    73,    73,    83,    83,
-      91,    96,   101,   106,    96,   117,   122,   127,   132,   137,
-     143,   144,   145,   146,   147,   148,   150,   155,   160,   165,
-     170,   175,   180,   185,   190,   191
+      60,    61,    62,    63,    65,    67,    72,    74,    74,    84,
+      84,    92,    97,   102,   107,    97,   118,   123,   128,   133,
+     138,   144,   145,   146,   147,   148,   149,   151,   156,   161,
+     166,   171,   176,   181,   186,   191,   192
 };
 #endif
 
@@ -597,7 +597,7 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
 
-#define YYTABLE_NINF (-1)
+#define YYTABLE_NINF (-14)
 
 #define yytable_value_is_error(Yyn) \
   0
@@ -606,14 +606,14 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      -6,    77,     8,   -56,    70,   -19,   -17,   -56,     9,     6,
-      -7,   -56,   -56,   -56,   -56,   -56,   -56,   -56,    70,    80,
-      70,    80,   -56,   -56,    15,    56,   -56,   -56,    70,    80,
-     -56,    77,    -1,    26,    80,    89,   -56,    89,    70,    70,
-      17,    80,   -56,   -56,   -56,   -56,   -56,    80,    80,    80,
-     -56,    80,    80,    15,    63,   -56,   -56,   -56,    41,   -56,
-     -56,    77,   -56,    89,   -56,   -56,    89,    63,    21,    -3,
-      77,   -56,    31,    -7,    77,   -56,    32,    -7,   -56
+      -6,    64,     8,   -56,    73,   -19,   -17,   -56,     9,     6,
+      -7,   -56,   -56,   -56,   -56,   -56,   -56,   -56,    73,    81,
+      73,    81,   -56,   -56,    15,    56,   -56,   -56,    73,    81,
+     -56,    84,    -1,    26,    81,    99,   -56,    99,    73,    73,
+      17,    81,   -56,   -56,   -56,   -56,   -56,    81,    81,    81,
+     -56,    81,    81,    15,    63,   -56,   -56,   -56,    41,   -56,
+     -56,    84,   -56,    99,   -56,   -56,    99,    63,    21,    -3,
+      84,   -56,    31,    -7,    84,   -56,    32,    -7,   -56
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -621,14 +621,14 @@ static const yytype_int8 yypact[] =
    means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       0,     5,     0,     2,     0,     0,     0,    21,     0,     0,
+       0,     5,     0,     2,     0,     0,     0,    22,     0,     0,
        4,     7,     8,     9,    10,    11,    12,     1,     0,     0,
-       0,     0,    44,    45,    16,     0,    15,    14,     0,     0,
-       3,     0,     0,     0,     0,    41,    27,    42,     0,     0,
-       0,     0,    30,    33,    34,    31,    32,     0,     0,     0,
-      35,     0,     0,    22,    13,     6,    28,    43,     0,    26,
-      25,     0,    39,    37,    40,    38,    36,    29,     0,    20,
-       0,    18,     0,    23,     0,    17,     0,    19,    24
+       0,     0,    45,    46,    17,     0,    16,    15,     0,     0,
+       3,    13,     0,     0,     0,    42,    28,    43,     0,     0,
+       0,     0,    31,    34,    35,    32,    33,     0,     0,     0,
+      36,     0,     0,    23,    14,     6,    29,    44,     0,    27,
+      26,    13,    40,    38,    41,    39,    37,    30,     0,    21,
+      13,    19,     0,    24,    13,    18,     0,    20,    25
 };
 
 /* YYPGOTO[NTERM-NUM].  */
@@ -657,11 +657,11 @@ static const yytype_int8 yytable[] =
       78,    45,    46,    47,    48,    49,    50,    41,     0,    51,
       55,     0,    57,     0,     0,     0,     0,     0,    47,    48,
       49,     0,    41,     0,    51,    42,    43,    57,    44,    41,
-       0,    45,    46,    47,    48,    49,    50,     0,     0,    51,
-      47,    48,    49,     0,    18,     0,    51,    19,     0,     0,
-       4,    20,     0,    21,    34,    41,     0,    19,     0,    22,
-      23,     5,     6,    21,     0,     7,     8,    48,    49,    22,
-      23
+       0,    45,    46,    47,    48,    49,    50,     4,     0,    51,
+      47,    48,    49,     0,     0,     0,    51,    18,     5,     6,
+      19,   -13,     7,     8,    20,    34,    21,     4,    19,     0,
+       0,     0,    22,    23,    21,    41,     0,     0,     5,     6,
+      22,    23,     7,     8,     0,     0,     0,    48,    49
 };
 
 static const yytype_int8 yycheck[] =
@@ -673,11 +673,11 @@ static const yytype_int8 yycheck[] =
        8,    15,    16,    17,    18,    19,    20,     6,    -1,    23,
       31,    -1,    26,    -1,    -1,    -1,    -1,    -1,    17,    18,
       19,    -1,     6,    -1,    23,     9,    10,    26,    12,     6,
-      -1,    15,    16,    17,    18,    19,    20,    -1,    -1,    23,
-      17,    18,    19,    -1,    14,    -1,    23,    17,    -1,    -1,
-      13,    21,    -1,    23,    14,     6,    -1,    17,    -1,    29,
-      30,    24,    25,    23,    -1,    28,    29,    18,    19,    29,
-      30
+      -1,    15,    16,    17,    18,    19,    20,    13,    -1,    23,
+      17,    18,    19,    -1,    -1,    -1,    23,    14,    24,    25,
+      17,    27,    28,    29,    21,    14,    23,    13,    17,    -1,
+      -1,    -1,    29,    30,    23,     6,    -1,    -1,    24,    25,
+      29,    30,    28,    29,    -1,    -1,    -1,    18,    19
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
@@ -698,20 +698,20 @@ static const yytype_int8 yystos[] =
 static const yytype_int8 yyr1[] =
 {
        0,    31,    32,    33,    34,    34,    35,    35,    36,    36,
-      36,    36,    36,    37,    38,    39,    41,    40,    43,    42,
-      42,    45,    46,    47,    44,    48,    48,    48,    48,    48,
-      49,    49,    49,    49,    49,    49,    50,    50,    50,    50,
-      50,    50,    50,    50,    50,    50
+      36,    36,    36,    36,    37,    38,    39,    41,    40,    43,
+      42,    42,    45,    46,    47,    44,    48,    48,    48,    48,
+      48,    49,    49,    49,    49,    49,    49,    50,    50,    50,
+      50,    50,    50,    50,    50,    50,    50
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr2[] =
 {
        0,     2,     1,     3,     1,     0,     3,     1,     1,     1,
-       1,     1,     1,     3,     2,     2,     0,     7,     0,     3,
-       0,     0,     0,     0,     8,     3,     3,     2,     3,     3,
-       1,     1,     1,     1,     1,     1,     3,     3,     3,     3,
-       3,     2,     2,     3,     1,     1
+       1,     1,     1,     0,     3,     2,     2,     0,     7,     0,
+       3,     0,     0,     0,     0,     8,     3,     3,     2,     3,
+       3,     1,     1,     1,     1,     1,     1,     3,     3,     3,
+       3,     3,     2,     2,     3,     1,     1
 };
 
 
@@ -1240,29 +1240,35 @@ yyreduce:
 #line 1241 "3AC.tab.c"
     break;
 
-  case 13: /* assignmentStmt: ID ASSIGN exp  */
-#line 64 "3AC.y"
-                              { fprintf(outfile, " %s = %s\n", (yyvsp[-2].val), (yyvsp[0].val)); }
+  case 13: /* stmt: %empty  */
+#line 63 "3AC.y"
+              {}
 #line 1247 "3AC.tab.c"
     break;
 
-  case 14: /* readStmt: READ ID  */
-#line 66 "3AC.y"
+  case 14: /* assignmentStmt: ID ASSIGN exp  */
+#line 65 "3AC.y"
+                              { fprintf(outfile, " %s = %s\n", (yyvsp[-2].val), (yyvsp[0].val)); }
+#line 1253 "3AC.tab.c"
+    break;
+
+  case 15: /* readStmt: READ ID  */
+#line 67 "3AC.y"
                     { 
                 new_variable();
                 fprintf(outfile, " %s = Read %s\n", variable, (yyvsp[0].val)); 
             }
-#line 1256 "3AC.tab.c"
-    break;
-
-  case 15: /* printStmt: PRINT ID  */
-#line 71 "3AC.y"
-                     { fprintf(outfile, " print %s\n", (yyvsp[0].val)); }
 #line 1262 "3AC.tab.c"
     break;
 
-  case 16: /* $@1: %empty  */
-#line 73 "3AC.y"
+  case 16: /* printStmt: PRINT ID  */
+#line 72 "3AC.y"
+                     { fprintf(outfile, " print %s\n", (yyvsp[0].val)); }
+#line 1268 "3AC.tab.c"
+    break;
+
+  case 17: /* $@1: %empty  */
+#line 74 "3AC.y"
                     {
   
               new_variable();
@@ -1271,11 +1277,11 @@ yyreduce:
               fprintf(outfile, " If ! (%s) goto L%d\n", variable, else_ref);
               
             }
-#line 1275 "3AC.tab.c"
+#line 1281 "3AC.tab.c"
     break;
 
-  case 18: /* $@2: %empty  */
-#line 83 "3AC.y"
+  case 19: /* $@2: %empty  */
+#line 84 "3AC.y"
                  { 
   
               if_true_ref = new_line_label();
@@ -1284,48 +1290,48 @@ yyreduce:
               else_ref--;
                
             }
-#line 1288 "3AC.tab.c"
-    break;
-
-  case 19: /* elsePart: ELSE $@2 stmtList  */
-#line 90 "3AC.y"
-                       { fprintf(outfile, " L%d : ", if_true_ref); }
 #line 1294 "3AC.tab.c"
     break;
 
-  case 20: /* elsePart: %empty  */
+  case 20: /* elsePart: ELSE $@2 stmtList  */
 #line 91 "3AC.y"
+                       { fprintf(outfile, " L%d : ", if_true_ref); }
+#line 1300 "3AC.tab.c"
+    break;
+
+  case 21: /* elsePart: %empty  */
+#line 92 "3AC.y"
               { 
                 fprintf(outfile, " L%d : ", else_ref); 
                 else_ref--;
             }
-#line 1303 "3AC.tab.c"
+#line 1309 "3AC.tab.c"
     break;
 
-  case 21: /* $@3: %empty  */
-#line 96 "3AC.y"
+  case 22: /* $@3: %empty  */
+#line 97 "3AC.y"
                   {
               
               while_ref = new_line_label();
               fprintf(outfile, " L%d : ", while_ref);
   
             }
-#line 1314 "3AC.tab.c"
+#line 1320 "3AC.tab.c"
     break;
 
-  case 22: /* $@4: %empty  */
-#line 101 "3AC.y"
+  case 23: /* $@4: %empty  */
+#line 102 "3AC.y"
                    {
               
               while_false_ref = new_line_label();
               fprintf(outfile, " If ! (%s) goto L%d\n", (yyvsp[0].val), while_false_ref); 
               
             }
-#line 1325 "3AC.tab.c"
+#line 1331 "3AC.tab.c"
     break;
 
-  case 23: /* $@5: %empty  */
-#line 106 "3AC.y"
+  case 24: /* $@5: %empty  */
+#line 107 "3AC.y"
                              {
               
               fprintf(outfile, " goto L%d\n", while_ref); 
@@ -1334,189 +1340,189 @@ yyreduce:
               while_ref-=2;
               
             }
-#line 1338 "3AC.tab.c"
+#line 1344 "3AC.tab.c"
     break;
 
-  case 25: /* bExp: bExp OR bExp  */
-#line 117 "3AC.y"
+  case 26: /* bExp: bExp OR bExp  */
+#line 118 "3AC.y"
                          {
                 new_variable();
                 fprintf(outfile, " %s = %s or %s\n", variable, (yyvsp[-2].val), (yyvsp[0].val));
                 strcpy((yyval.val), variable);
             }
-#line 1348 "3AC.tab.c"
+#line 1354 "3AC.tab.c"
     break;
 
-  case 26: /* bExp: bExp AND bExp  */
-#line 122 "3AC.y"
+  case 27: /* bExp: bExp AND bExp  */
+#line 123 "3AC.y"
                             {
                 new_variable();
                 fprintf(outfile, " %s = %s and %s\n", variable, (yyvsp[-2].val), (yyvsp[0].val));
                 strcpy((yyval.val), variable);
             }
-#line 1358 "3AC.tab.c"
+#line 1364 "3AC.tab.c"
     break;
 
-  case 27: /* bExp: NOT bExp  */
-#line 127 "3AC.y"
+  case 28: /* bExp: NOT bExp  */
+#line 128 "3AC.y"
                        {
                 new_variable();
                 fprintf(outfile, " %s = !%s\n", variable, (yyvsp[0].val));
                 strcpy((yyval.val), variable);
             }
-#line 1368 "3AC.tab.c"
+#line 1374 "3AC.tab.c"
     break;
 
-  case 28: /* bExp: LEFT_PAREN bExp RIGHT_PAREN  */
-#line 132 "3AC.y"
+  case 29: /* bExp: LEFT_PAREN bExp RIGHT_PAREN  */
+#line 133 "3AC.y"
                                           {
                 new_variable();
                 fprintf(outfile, " %s = %s\n", variable, (yyvsp[-1].val));
                 strcpy((yyval.val), variable);
             }
-#line 1378 "3AC.tab.c"
+#line 1384 "3AC.tab.c"
     break;
 
-  case 29: /* bExp: exp relOP exp  */
-#line 137 "3AC.y"
+  case 30: /* bExp: exp relOP exp  */
+#line 138 "3AC.y"
                             {
                 new_variable();
                 fprintf(outfile, " %s = %s %s %s\n", variable, (yyvsp[-2].val), (yyvsp[-1].val), (yyvsp[0].val));
                 strcpy((yyval.val), variable);
             }
-#line 1388 "3AC.tab.c"
-    break;
-
-  case 30: /* relOP: EQ  */
-#line 143 "3AC.y"
-               { strcpy((yyval.val), "=="); }
 #line 1394 "3AC.tab.c"
     break;
 
-  case 31: /* relOP: LE  */
+  case 31: /* relOP: EQ  */
 #line 144 "3AC.y"
-                 { strcpy((yyval.val), "<="); }
+               { strcpy((yyval.val), "=="); }
 #line 1400 "3AC.tab.c"
     break;
 
-  case 32: /* relOP: LT  */
+  case 32: /* relOP: LE  */
 #line 145 "3AC.y"
-                 { strcpy((yyval.val), "<"); }
+                 { strcpy((yyval.val), "<="); }
 #line 1406 "3AC.tab.c"
     break;
 
-  case 33: /* relOP: GE  */
+  case 33: /* relOP: LT  */
 #line 146 "3AC.y"
-                 { strcpy((yyval.val), ">="); }
+                 { strcpy((yyval.val), "<"); }
 #line 1412 "3AC.tab.c"
     break;
 
-  case 34: /* relOP: GT  */
+  case 34: /* relOP: GE  */
 #line 147 "3AC.y"
-                 { strcpy((yyval.val), ">"); }
+                 { strcpy((yyval.val), ">="); }
 #line 1418 "3AC.tab.c"
     break;
 
-  case 35: /* relOP: NE  */
+  case 35: /* relOP: GT  */
 #line 148 "3AC.y"
-                 { strcpy((yyval.val), "!="); }
+                 { strcpy((yyval.val), ">"); }
 #line 1424 "3AC.tab.c"
     break;
 
-  case 36: /* exp: exp PLUS exp  */
-#line 150 "3AC.y"
+  case 36: /* relOP: NE  */
+#line 149 "3AC.y"
+                 { strcpy((yyval.val), "!="); }
+#line 1430 "3AC.tab.c"
+    break;
+
+  case 37: /* exp: exp PLUS exp  */
+#line 151 "3AC.y"
                          {
                 new_variable();
                 fprintf(outfile, " %s = %s + %s\n", variable, (yyvsp[-2].val), (yyvsp[0].val));
                 strcpy((yyval.val), variable);
             }
-#line 1434 "3AC.tab.c"
+#line 1440 "3AC.tab.c"
     break;
 
-  case 37: /* exp: exp MINUS exp  */
-#line 155 "3AC.y"
+  case 38: /* exp: exp MINUS exp  */
+#line 156 "3AC.y"
                             {
                 new_variable();
                 fprintf(outfile, " %s = %s - %s\n", variable, (yyvsp[-2].val), (yyvsp[0].val));
                 strcpy((yyval.val), variable);
             }
-#line 1444 "3AC.tab.c"
+#line 1450 "3AC.tab.c"
     break;
 
-  case 38: /* exp: exp MULT exp  */
-#line 160 "3AC.y"
+  case 39: /* exp: exp MULT exp  */
+#line 161 "3AC.y"
                            {
                 new_variable();
                 fprintf(outfile, " %s = %s * %s\n", variable, (yyvsp[-2].val), (yyvsp[0].val));
                 strcpy((yyval.val), variable);
             }
-#line 1454 "3AC.tab.c"
+#line 1460 "3AC.tab.c"
     break;
 
-  case 39: /* exp: exp DIV exp  */
-#line 165 "3AC.y"
+  case 40: /* exp: exp DIV exp  */
+#line 166 "3AC.y"
                           {
                 new_variable();
                 fprintf(outfile, " %s = %s / %s\n", variable, (yyvsp[-2].val), (yyvsp[0].val));
                 strcpy((yyval.val), variable);
             }
-#line 1464 "3AC.tab.c"
+#line 1470 "3AC.tab.c"
     break;
 
-  case 40: /* exp: exp MOD exp  */
-#line 170 "3AC.y"
+  case 41: /* exp: exp MOD exp  */
+#line 171 "3AC.y"
                           {
                 new_variable();
                 fprintf(outfile, " %s = %s %% %s\n", variable, (yyvsp[-2].val), (yyvsp[0].val));
                 strcpy((yyval.val), variable);
             }
-#line 1474 "3AC.tab.c"
+#line 1480 "3AC.tab.c"
     break;
 
-  case 41: /* exp: MINUS exp  */
-#line 175 "3AC.y"
+  case 42: /* exp: MINUS exp  */
+#line 176 "3AC.y"
                         {
                 new_variable();
                 fprintf(outfile, " %s = -%s\n", variable, (yyvsp[0].val));
                 strcpy((yyval.val), variable);
             }
-#line 1484 "3AC.tab.c"
+#line 1490 "3AC.tab.c"
     break;
 
-  case 42: /* exp: PLUS exp  */
-#line 180 "3AC.y"
+  case 43: /* exp: PLUS exp  */
+#line 181 "3AC.y"
                        {
                 new_variable();
                 fprintf(outfile, " %s = +%s\n", variable, (yyvsp[0].val));
                 strcpy((yyval.val), variable);
             }
-#line 1494 "3AC.tab.c"
+#line 1500 "3AC.tab.c"
     break;
 
-  case 43: /* exp: LEFT_PAREN exp RIGHT_PAREN  */
-#line 185 "3AC.y"
+  case 44: /* exp: LEFT_PAREN exp RIGHT_PAREN  */
+#line 186 "3AC.y"
                                          {
                 new_variable();
                 fprintf(outfile, " %s = %s\n", variable, (yyvsp[-1].val));
                 strcpy((yyval.val), variable);
             }
-#line 1504 "3AC.tab.c"
-    break;
-
-  case 44: /* exp: ID  */
-#line 190 "3AC.y"
-                 {}
 #line 1510 "3AC.tab.c"
     break;
 
-  case 45: /* exp: INT_CONST  */
+  case 45: /* exp: ID  */
 #line 191 "3AC.y"
-                        {}
+                 {}
 #line 1516 "3AC.tab.c"
     break;
 
+  case 46: /* exp: INT_CONST  */
+#line 192 "3AC.y"
+                        {}
+#line 1522 "3AC.tab.c"
+    break;
 
-#line 1520 "3AC.tab.c"
+
+#line 1526 "3AC.tab.c"
 
       default: break;
     }
@@ -1709,7 +1715,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 192 "3AC.y"
+#line 193 "3AC.y"
 
 
 

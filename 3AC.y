@@ -2,7 +2,7 @@
     #include <stdio.h> 
     #include <stdlib.h>
     #include <string.h>
-    #include "lex.yy.c"
+    #include "scanner.h"
     int flag=0; 
     
     void yyerror(char *str);
@@ -59,7 +59,8 @@ stmt:       assignmentStmt {}
             | readStmt {}
             | printStmt {}
             | ifStmt {}
-            | whileStmt {};
+            | whileStmt {}
+            | {};
 
 assignmentStmt: ID ASSIGN exp { fprintf(outfile, " %s = %s\n", $1, $3); };
 

@@ -1,5 +1,6 @@
+#line 1 "scanner.c"
 
-#line 2 "lex.yy.c"
+#line 3 "scanner.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -456,7 +457,7 @@ static const flex_int16_t yy_def[72] =
 
 static const flex_int16_t yy_nxt[116] =
     {   0,
-        4,    5,    6,    5,    7,    8,    9,   10,   11,   12,
+        4,    5,    6,    4,    7,    8,    9,   10,   11,   12,
        13,   14,   15,   16,   17,   18,   19,   20,   19,   19,
        21,   19,   22,   19,   23,   19,   24,   25,   26,   27,
        28,   19,   19,   29,   33,   34,   38,   36,   39,   49,
@@ -515,9 +516,9 @@ char *yytext;
   #include<string.h>
   #include "3AC.tab.h" 
   
-#line 518 "lex.yy.c"
+#line 519 "scanner.c"
 /* Rule Section */
-#line 520 "lex.yy.c"
+#line 521 "scanner.c"
 
 #define INITIAL 0
 
@@ -736,7 +737,7 @@ YY_DECL
 	{
 #line 12 "3AC.l"
 
-#line 739 "lex.yy.c"
+#line 740 "scanner.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -958,14 +959,14 @@ YY_RULE_SETUP
 case 31:
 YY_RULE_SETUP
 #line 43 "3AC.l"
-{printf("Invalid token %s\n", yytext); exit(0);} 
+{ printf("Invalid token %s\n", yytext); exit(0);} 
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
 #line 44 "3AC.l"
 ECHO;
 	YY_BREAK
-#line 968 "lex.yy.c"
+#line 969 "scanner.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1989,3 +1990,4 @@ int yywrap()
 { 
 	return 1; 
 } 
+
